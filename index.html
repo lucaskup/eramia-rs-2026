@@ -481,7 +481,7 @@
   function renderSession(s, papers, terms, hasQuery) {
     const total = s.papers.length;
     const shown = papers.length;
-    const kindLbl = s.kind === 'oral' ? 'Sessão técnica' : 'Pôsteres';
+    const kindLbl = s.kind === 'oral' ? 'Apresentação oral' : 'Pôsteres';
     const count = shown === total ? `${total} ${total === 1 ? 'trabalho' : 'trabalhos'}` : `${shown} de ${total} trabalhos`;
     const items = papers.map(p => `
       <li class="paper" id="t-${p.id}">
@@ -503,7 +503,7 @@
           <div class="sh">
             <div class="name">${esc(s.name)}</div>
             ${s.theme ? `<div class="theme">${esc(s.theme)}</div>` : ''}
-            <div class="meta"><span class="kind${s.kind === 'poster' ? ' poster' : ''}">${kindLbl}</span><span>${esc(s.time)}</span><span>${count}</span></div>
+            <div class="meta"><span class="kind${s.kind === 'poster' ? ' poster' : ''}" title="${s.kind === 'oral' ? 'Trabalhos apresentados oralmente' : 'Trabalhos apresentados em pôster'}">${kindLbl}</span><span>${esc(s.time)}</span><span>${count}</span></div>
           </div>
         </summary>
         <ol class="papers">${items}</ol>
