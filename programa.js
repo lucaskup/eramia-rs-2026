@@ -921,7 +921,8 @@ window.PROGRAMA = {
       "Caio César Sabino Soares",
       "Wemerson Delcio Parreira",
       "Rudimar Luís Scaranto Dazzi",
-      "Anita Fernandes"
+      "Anita Fernandes",
+      "Theo Mosimann"
      ],
      "bestPaper": false
     },
