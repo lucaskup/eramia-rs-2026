@@ -4,7 +4,7 @@ window.PROGRAMA = {
   "name": "ERAMIA-RS 2026",
   "subtitle": "Escola Regional de Aprendizado de Máquina e Inteligência Artificial do Rio Grande do Sul"
  },
- "generatedAt": "2026-10-27",
+ "generatedAt": "2026-10-28",
  "days": [
   {
    "iso": "2026-11-09",
@@ -786,7 +786,7 @@ window.PROGRAMA = {
     "weekday": "Segunda-feira",
     "weekdayShort": "seg"
    },
-   "time": "10h20–11h00",
+   "time": "10h00–11h00",
    "theme": "",
    "papers": [
     {
@@ -1029,7 +1029,7 @@ window.PROGRAMA = {
     "weekday": "Segunda-feira",
     "weekdayShort": "seg"
    },
-   "time": "14h50–15h30",
+   "time": "14h30–15h30",
    "theme": "",
    "papers": [
     {
@@ -1288,7 +1288,7 @@ window.PROGRAMA = {
     "weekday": "Terça-feira",
     "weekdayShort": "ter"
    },
-   "time": "10h20–11h00",
+   "time": "10h00–11h00",
    "theme": "",
    "papers": [
     {
@@ -1522,7 +1522,7 @@ window.PROGRAMA = {
     "weekday": "Terça-feira",
     "weekdayShort": "ter"
    },
-   "time": "14h50–15h30",
+   "time": "14h30–15h30",
    "theme": "",
    "papers": [
     {
@@ -1751,7 +1751,7 @@ window.PROGRAMA = {
     "weekday": "Quarta-feira",
     "weekdayShort": "qua"
    },
-   "time": "10h20–11h00",
+   "time": "10h00–11h00",
    "theme": "",
    "papers": [
     {
@@ -1982,7 +1982,7 @@ window.PROGRAMA = {
     "weekday": "Quarta-feira",
     "weekdayShort": "qua"
    },
-   "time": "14h50–15h30",
+   "time": "14h30–15h30",
    "theme": "",
    "papers": [
     {
