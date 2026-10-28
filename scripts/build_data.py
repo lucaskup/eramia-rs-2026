@@ -46,6 +46,20 @@ AUTHOR_FIXES = {
     "Luis Felipe SIlva Toschi": "Luis Felipe Silva Toschi",
 }
 
+# Local de cada sessão. Se a planilha tiver uma coluna "Local", ela tem precedência.
+ROOM_POSTER = "Hall do 3º andar, Prédio 2"
+ROOMS_ORAL = {
+    1: "Teatro Moacyr Scliar, 4º andar, Prédio 2",
+    5: "Teatro Moacyr Scliar, 4º andar, Prédio 2",
+    8: "Teatro Moacyr Scliar, 4º andar, Prédio 2",
+    2: "Sala 507, Prédio 2",
+    4: "Sala 507, Prédio 2",
+    7: "Sala 507, Prédio 2",
+    3: "Sala 508, Prédio 2",
+    6: "Sala 508, Prédio 2",
+    9: "Sala 508, Prédio 2",
+}
+
 LOWER_PARTICLES = {"de", "da", "do", "das", "dos", "e", "di", "del", "van", "von"}
 
 
@@ -96,6 +110,15 @@ def parse_authors(raw):
     return [titlecase_name(AUTHOR_FIXES.get(n, n)) for n in names if n]
 
 
+def room_for(name, kind, from_sheet=""):
+    if from_sheet:
+        return from_sheet
+    if kind == "poster":
+        return ROOM_POSTER
+    m = re.search(r"(\d+)\s*$", name)
+    return ROOMS_ORAL.get(int(m.group(1)), "") if m else ""
+
+
 def read_sheet(ws, kind):
     rows = list(ws.iter_rows(values_only=True))
     header = [clean_text(h) for h in rows[0]]
@@ -122,6 +145,7 @@ def read_sheet(ws, kind):
                 "day": day,
                 "time": clean_text(row[col["Horário"]]).replace("-", "–"),
                 "theme": clean_text(row[col["Tema"]]) if "Tema" in col else "",
+                "room": room_for(name, kind, clean_text(row[col["Local"]]) if "Local" in col else ""),
                 "papers": [],
             }
         title = clean_text(row[col["Título"]])

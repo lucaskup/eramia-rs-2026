@@ -18,7 +18,7 @@ Página estática com o programa das sessões técnicas e de pôsteres do ERAMIA
 uv run scripts/build_data.py
 ```
 
-O script lê as abas `Sessões Técnicas` e `Sessões de Pôsteres`, remove o asterisco dos títulos e marca esses trabalhos como candidatos a best paper, limpa restos de LaTeX e normaliza nomes escritos todos em maiúsculas. Correções pontuais de digitação ficam em `TITLE_FIXES` e `AUTHOR_FIXES` no início do script.
+O script lê as abas `Sessões Técnicas` e `Sessões de Pôsteres`, remove o asterisco dos títulos e marca esses trabalhos como candidatos a best paper, limpa restos de LaTeX e normaliza nomes escritos todos em maiúsculas. Correções pontuais de digitação ficam em `TITLE_FIXES` e `AUTHOR_FIXES` no início do script. O local de cada sessão vem de `ROOM_POSTER` e `ROOMS_ORAL`, também no início do script; se a planilha ganhar uma coluna `Local`, ela tem precedência.
 
 ## Publicar
 

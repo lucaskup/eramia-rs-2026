@@ -166,6 +166,7 @@
   .sh .name { font-weight: 700; font-size: 1.02rem; }
   .sh .theme { color: var(--text); margin-top: 2px; }
   .sh .meta { color: var(--muted); font-size: .85rem; margin-top: 4px; display: flex; gap: 10px; flex-wrap: wrap; }
+  .sh .meta .room { color: var(--text); font-weight: 500; }
   .kind { display: inline-block; font-size: .72rem; font-weight: 600; letter-spacing: .04em; text-transform: uppercase;
           padding: 2px 8px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); }
   .kind.poster { background: var(--surface-2); color: var(--muted); }
@@ -503,7 +504,7 @@
           <div class="sh">
             <div class="name">${esc(s.name)}</div>
             ${s.theme ? `<div class="theme">${esc(s.theme)}</div>` : ''}
-            <div class="meta"><span class="kind${s.kind === 'poster' ? ' poster' : ''}" title="${s.kind === 'oral' ? 'Trabalhos apresentados oralmente' : 'Trabalhos apresentados em pôster'}">${kindLbl}</span><span>${esc(s.time)}</span><span>${count}</span></div>
+            <div class="meta"><span class="kind${s.kind === 'poster' ? ' poster' : ''}" title="${s.kind === 'oral' ? 'Trabalhos apresentados oralmente' : 'Trabalhos apresentados em pôster'}">${kindLbl}</span><span>${esc(s.time)}</span>${s.room ? `<span class="room" title="Local da sessão">${esc(s.room)}</span>` : ''}<span>${count}</span></div>
           </div>
         </summary>
         <ol class="papers">${items}</ol>
