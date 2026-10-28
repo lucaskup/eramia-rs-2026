@@ -2,6 +2,7 @@
 window.PROGRAMA = {
  "event": {
   "name": "ERAMIA-RS 2026",
+  "venue": "Prédio 2",
   "subtitle": "Escola Regional de Aprendizado de Máquina e Inteligência Artificial do Rio Grande do Sul"
  },
  "generatedAt": "2026-10-28",
@@ -38,7 +39,11 @@ window.PROGRAMA = {
    },
    "time": "17h00–18h15",
    "theme": "Best Papers – Trilha Graduação",
-   "room": "Teatro Moacyr Scliar, 4º andar, Prédio 2",
+   "room": {
+    "key": "teatro",
+    "label": "Teatro Moacyr Scliar",
+    "full": "Teatro Moacyr Scliar, 4º andar, Prédio 2"
+   },
    "papers": [
     {
      "order": 1,
@@ -124,7 +129,11 @@ window.PROGRAMA = {
    },
    "time": "17h00–18h15",
    "theme": "Best Papers – Trilha Pós-Graduação",
-   "room": "Sala 507, Prédio 2",
+   "room": {
+    "key": "s507",
+    "label": "Sala 507",
+    "full": "Sala 507, Prédio 2"
+   },
    "papers": [
     {
      "order": 1,
@@ -203,7 +212,11 @@ window.PROGRAMA = {
    },
    "time": "17h00–18h15",
    "theme": "Predição com Dados Tabulares e Séries Temporais",
-   "room": "Sala 508, Prédio 2",
+   "room": {
+    "key": "s508",
+    "label": "Sala 508",
+    "full": "Sala 508, Prédio 2"
+   },
    "papers": [
     {
      "order": 1,
@@ -283,7 +296,11 @@ window.PROGRAMA = {
    },
    "time": "16h30–18h15",
    "theme": "LLMs, Agentes e Raciocínio Neuro-Simbólico",
-   "room": "Sala 507, Prédio 2",
+   "room": {
+    "key": "s507",
+    "label": "Sala 507",
+    "full": "Sala 507, Prédio 2"
+   },
    "papers": [
     {
      "order": 1,
@@ -392,7 +409,11 @@ window.PROGRAMA = {
    },
    "time": "16h30–18h15",
    "theme": "Processamento de Linguagem Natural e Representações Textuais",
-   "room": "Teatro Moacyr Scliar, 4º andar, Prédio 2",
+   "room": {
+    "key": "teatro",
+    "label": "Teatro Moacyr Scliar",
+    "full": "Teatro Moacyr Scliar, 4º andar, Prédio 2"
+   },
    "papers": [
     {
      "order": 1,
@@ -497,7 +518,11 @@ window.PROGRAMA = {
    },
    "time": "16h30–18h15",
    "theme": "Imagens Médicas",
-   "room": "Sala 508, Prédio 2",
+   "room": {
+    "key": "s508",
+    "label": "Sala 508",
+    "full": "Sala 508, Prédio 2"
+   },
    "papers": [
     {
      "order": 1,
@@ -596,7 +621,11 @@ window.PROGRAMA = {
    },
    "time": "11h00–12h00",
    "theme": "Explicabilidade e Avaliação em Saúde",
-   "room": "Sala 507, Prédio 2",
+   "room": {
+    "key": "s507",
+    "label": "Sala 507",
+    "full": "Sala 507, Prédio 2"
+   },
    "papers": [
     {
      "order": 1,
@@ -662,7 +691,11 @@ window.PROGRAMA = {
    },
    "time": "11h00–12h00",
    "theme": "Bioinformática e Neurociência Computacional",
-   "room": "Teatro Moacyr Scliar, 4º andar, Prédio 2",
+   "room": {
+    "key": "teatro",
+    "label": "Teatro Moacyr Scliar",
+    "full": "Teatro Moacyr Scliar, 4º andar, Prédio 2"
+   },
    "papers": [
     {
      "order": 1,
@@ -731,7 +764,11 @@ window.PROGRAMA = {
    },
    "time": "11h00–12h00",
    "theme": "Visão Computacional, Sistemas Embarcados e Otimização",
-   "room": "Sala 508, Prédio 2",
+   "room": {
+    "key": "s508",
+    "label": "Sala 508",
+    "full": "Sala 508, Prédio 2"
+   },
    "papers": [
     {
      "order": 1,
@@ -797,7 +834,11 @@ window.PROGRAMA = {
    },
    "time": "10h00–11h00",
    "theme": "",
-   "room": "Hall do 3º andar, Prédio 2",
+   "room": {
+    "key": "hall",
+    "label": "Hall 3º andar",
+    "full": "Hall do 3º andar, Prédio 2"
+   },
    "papers": [
     {
      "order": 1,
@@ -1042,7 +1083,11 @@ window.PROGRAMA = {
    },
    "time": "14h30–15h30",
    "theme": "",
-   "room": "Hall do 3º andar, Prédio 2",
+   "room": {
+    "key": "hall",
+    "label": "Hall 3º andar",
+    "full": "Hall do 3º andar, Prédio 2"
+   },
    "papers": [
     {
      "order": 1,
@@ -1302,7 +1347,11 @@ window.PROGRAMA = {
    },
    "time": "10h00–11h00",
    "theme": "",
-   "room": "Hall do 3º andar, Prédio 2",
+   "room": {
+    "key": "hall",
+    "label": "Hall 3º andar",
+    "full": "Hall do 3º andar, Prédio 2"
+   },
    "papers": [
     {
      "order": 1,
@@ -1537,7 +1586,11 @@ window.PROGRAMA = {
    },
    "time": "14h30–15h30",
    "theme": "",
-   "room": "Hall do 3º andar, Prédio 2",
+   "room": {
+    "key": "hall",
+    "label": "Hall 3º andar",
+    "full": "Hall do 3º andar, Prédio 2"
+   },
    "papers": [
     {
      "order": 1,
@@ -1767,7 +1820,11 @@ window.PROGRAMA = {
    },
    "time": "10h00–11h00",
    "theme": "",
-   "room": "Hall do 3º andar, Prédio 2",
+   "room": {
+    "key": "hall",
+    "label": "Hall 3º andar",
+    "full": "Hall do 3º andar, Prédio 2"
+   },
    "papers": [
     {
      "order": 1,
@@ -1999,7 +2056,11 @@ window.PROGRAMA = {
    },
    "time": "14h30–15h30",
    "theme": "",
-   "room": "Hall do 3º andar, Prédio 2",
+   "room": {
+    "key": "hall",
+    "label": "Hall 3º andar",
+    "full": "Hall do 3º andar, Prédio 2"
+   },
    "papers": [
     {
      "order": 1,

@@ -46,19 +46,17 @@ AUTHOR_FIXES = {
     "Luis Felipe SIlva Toschi": "Luis Felipe Silva Toschi",
 }
 
-# Local de cada sessão. Se a planilha tiver uma coluna "Local", ela tem precedência.
-ROOM_POSTER = "Hall do 3º andar, Prédio 2"
-ROOMS_ORAL = {
-    1: "Teatro Moacyr Scliar, 4º andar, Prédio 2",
-    5: "Teatro Moacyr Scliar, 4º andar, Prédio 2",
-    8: "Teatro Moacyr Scliar, 4º andar, Prédio 2",
-    2: "Sala 507, Prédio 2",
-    4: "Sala 507, Prédio 2",
-    7: "Sala 507, Prédio 2",
-    3: "Sala 508, Prédio 2",
-    6: "Sala 508, Prédio 2",
-    9: "Sala 508, Prédio 2",
+# Local de cada sessão: rótulo curto (badge), endereço completo (tooltip) e chave (cor).
+# Se a planilha tiver uma coluna "Local", ela tem precedência.
+VENUE = "Prédio 2"
+ROOMS = {
+    "teatro": {"key": "teatro", "label": "Teatro Moacyr Scliar", "full": "Teatro Moacyr Scliar, 4º andar, Prédio 2"},
+    "s507": {"key": "s507", "label": "Sala 507", "full": "Sala 507, Prédio 2"},
+    "s508": {"key": "s508", "label": "Sala 508", "full": "Sala 508, Prédio 2"},
+    "hall": {"key": "hall", "label": "Hall 3º andar", "full": "Hall do 3º andar, Prédio 2"},
 }
+ROOM_POSTER = "hall"
+ROOMS_ORAL = {1: "teatro", 5: "teatro", 8: "teatro", 2: "s507", 4: "s507", 7: "s507", 3: "s508", 6: "s508", 9: "s508"}
 
 LOWER_PARTICLES = {"de", "da", "do", "das", "dos", "e", "di", "del", "van", "von"}
 
@@ -112,11 +110,12 @@ def parse_authors(raw):
 
 def room_for(name, kind, from_sheet=""):
     if from_sheet:
-        return from_sheet
+        return {"key": slug(from_sheet), "label": from_sheet, "full": from_sheet}
     if kind == "poster":
-        return ROOM_POSTER
+        return ROOMS[ROOM_POSTER]
     m = re.search(r"(\d+)\s*$", name)
-    return ROOMS_ORAL.get(int(m.group(1)), "") if m else ""
+    key = ROOMS_ORAL.get(int(m.group(1))) if m else None
+    return ROOMS[key] if key else None
 
 
 def read_sheet(ws, kind):
@@ -186,6 +185,7 @@ def main():
     data = {
         "event": {
             "name": "ERAMIA-RS 2026",
+            "venue": VENUE,
             "subtitle": "Escola Regional de Aprendizado de Máquina e Inteligência Artificial do Rio Grande do Sul",
         },
         "generatedAt": date.today().isoformat(),

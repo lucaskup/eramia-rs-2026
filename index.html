@@ -23,6 +23,10 @@
     --grad: #1b6b3a;      --grad-bg: #e3f3e8;
     --pos: #5b3ea6;       --pos-bg: #ece6f8;
     --prof: #a0470f;      --prof-bg: #fbe8dc;
+    --teatro: #9b2650;    --teatro-bg: #fbe3ea;
+    --s507: #0e6e8c;      --s507-bg: #d6f0f7;
+    --s508: #5c6b00;      --s508-bg: #eef3d2;
+    --hall: #4a5568;      --hall-bg: #e7ebf1;
     --shadow: 0 1px 2px rgba(0,0,0,.05), 0 4px 14px rgba(0,0,0,.05);
     --radius: 12px;
   }
@@ -43,6 +47,10 @@
       --grad: #7fd69a;    --grad-bg: #15301f;
       --pos: #c3b0f5;     --pos-bg: #2a2140;
       --prof: #f5a97a;    --prof-bg: #3b2416;
+      --teatro: #f2a6c0;  --teatro-bg: #3d1a28;
+      --s507: #7fd0e8;    --s507-bg: #0f3340;
+      --s508: #cfdc7a;    --s508-bg: #2c3310;
+      --hall: #b5bfcf;    --hall-bg: #262c36;
       --shadow: 0 1px 2px rgba(0,0,0,.4), 0 4px 14px rgba(0,0,0,.35);
     }
   }
@@ -62,6 +70,10 @@
     --grad: #7fd69a;    --grad-bg: #15301f;
     --pos: #c3b0f5;     --pos-bg: #2a2140;
     --prof: #f5a97a;    --prof-bg: #3b2416;
+      --teatro: #f2a6c0;  --teatro-bg: #3d1a28;
+      --s507: #7fd0e8;    --s507-bg: #0f3340;
+      --s508: #cfdc7a;    --s508-bg: #2c3310;
+      --hall: #b5bfcf;    --hall-bg: #262c36;
     --shadow: 0 1px 2px rgba(0,0,0,.4), 0 4px 14px rgba(0,0,0,.35);
   }
 
@@ -166,7 +178,12 @@
   .sh .name { font-weight: 700; font-size: 1.02rem; }
   .sh .theme { color: var(--text); margin-top: 2px; }
   .sh .meta { color: var(--muted); font-size: .85rem; margin-top: 4px; display: flex; gap: 10px; flex-wrap: wrap; }
-  .sh .meta .room { color: var(--text); font-weight: 500; }
+  .room { display: inline-block; font-size: .74rem; font-weight: 600; padding: 2px 8px; border-radius: 999px; border: 1px solid transparent; }
+  .room.teatro { background: var(--teatro-bg); color: var(--teatro); }
+  .room.s507 { background: var(--s507-bg); color: var(--s507); }
+  .room.s508 { background: var(--s508-bg); color: var(--s508); }
+  .room.hall { background: var(--hall-bg); color: var(--hall); }
+  .room.other { border-color: var(--border); color: var(--muted); }
   .kind { display: inline-block; font-size: .72rem; font-weight: 600; letter-spacing: .04em; text-transform: uppercase;
           padding: 2px 8px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); }
   .kind.poster { background: var(--surface-2); color: var(--muted); }
@@ -218,6 +235,7 @@
     <div>
       <h1 id="ev-name">ERAMIA-RS 2026 <small id="ev-sub"></small></h1>
       <p id="ev-desc">Programa das sessões técnicas e de pôsteres. Busque por autor, ID ou título do trabalho.</p>
+      <p id="ev-venue" class="venue" hidden></p>
     </div>
     <button class="theme-btn" id="theme-btn" type="button" aria-label="Alternar tema">
       <span class="ico" aria-hidden="true"></span><span class="lbl"></span>
@@ -290,6 +308,11 @@
   document.getElementById('ev-name').firstChild.textContent = DATA.event.name + ' ';
   document.getElementById('ev-sub').textContent = DATA.event.subtitle || '';
   document.title = 'Programa ' + DATA.event.name;
+  if (DATA.event.venue) {
+    const v = document.getElementById('ev-venue');
+    v.textContent = `Todas as sessões acontecem no ${DATA.event.venue}.`;
+    v.hidden = false;
+  }
   const dayList = DATA.days;
   const nOral = DATA.sessions.filter(s => s.kind === 'oral').reduce((n, s) => n + s.papers.length, 0);
   const nPoster = DATA.sessions.filter(s => s.kind === 'poster').reduce((n, s) => n + s.papers.length, 0);
@@ -297,6 +320,7 @@
     `${nOral} apresentações orais e ${nPoster} pôsteres. Dados gerados em ${fmtDate(DATA.generatedAt)} a partir da planilha oficial do programa.`;
 
   // ---------- utilidades ----------
+  function roomClass(k) { return ['teatro', 's507', 's508', 'hall'].includes(k) ? k : 'other'; }
   function fmtDate(iso) { const [y, m, d] = iso.split('-'); return `${d}/${m}/${y}`; }
   function norm(s) { return String(s).normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase(); }
   function esc(s) { return String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c])); }
@@ -504,7 +528,7 @@
           <div class="sh">
             <div class="name">${esc(s.name)}</div>
             ${s.theme ? `<div class="theme">${esc(s.theme)}</div>` : ''}
-            <div class="meta"><span class="kind${s.kind === 'poster' ? ' poster' : ''}" title="${s.kind === 'oral' ? 'Trabalhos apresentados oralmente' : 'Trabalhos apresentados em pôster'}">${kindLbl}</span><span>${esc(s.time)}</span>${s.room ? `<span class="room" title="Local da sessão">${esc(s.room)}</span>` : ''}<span>${count}</span></div>
+            <div class="meta"><span class="kind${s.kind === 'poster' ? ' poster' : ''}" title="${s.kind === 'oral' ? 'Trabalhos apresentados oralmente' : 'Trabalhos apresentados em pôster'}">${kindLbl}</span><span>${esc(s.time)}</span>${s.room ? `<span class="room ${roomClass(s.room.key)}" title="${esc(s.room.full)}">${esc(s.room.label)}</span>` : ''}<span>${count}</span></div>
           </div>
         </summary>
         <ol class="papers">${items}</ol>
