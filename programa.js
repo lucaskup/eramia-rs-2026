@@ -5,7 +5,7 @@ window.PROGRAMA = {
   "venue": "Prédio 2",
   "subtitle": "Escola Regional de Aprendizado de Máquina e Inteligência Artificial do Rio Grande do Sul"
  },
- "generatedAt": "2026-10-28",
+ "generatedAt": "2026-10-29",
  "days": [
   {
    "iso": "2026-11-09",
@@ -629,6 +629,18 @@ window.PROGRAMA = {
    "papers": [
     {
      "order": 1,
+     "id": 35177,
+     "track": "Pós-Graduação",
+     "title": "Cognitive Reserve as a SHAP Interaction: Age–Education Effect Modification in Three LMIC Aging Cohorts",
+     "authors": [
+      "Daniel Arnold",
+      "Wyllians Borelli",
+      "Mariana Recamonde-Mendoza"
+     ],
+     "bestPaper": false
+    },
+    {
+     "order": 2,
      "id": 35100,
      "track": "Graduação",
      "title": "Um Modelo Híbrido Interpretável Baseado em Aprendizagem Profunda e Lógica Fuzzy para Classificar Lesões de Pele",
@@ -640,7 +652,7 @@ window.PROGRAMA = {
      "bestPaper": false
     },
     {
-     "order": 2,
+     "order": 3,
      "id": 35855,
      "track": "Graduação",
      "title": "Avaliação Multi-método da Relação entre Desempenho e Explicabilidade em Triagem de Retinopatia Diabética",
@@ -651,18 +663,6 @@ window.PROGRAMA = {
       "Carla M.D.S. Freitas",
       "Beatriz Schaan",
       "Philippe Olivier Alexandre Navaux"
-     ],
-     "bestPaper": false
-    },
-    {
-     "order": 3,
-     "id": 35177,
-     "track": "Pós-Graduação",
-     "title": "Cognitive Reserve as a SHAP Interaction: Age–Education Effect Modification in Three LMIC Aging Cohorts",
-     "authors": [
-      "Daniel Arnold",
-      "Wyllians Borelli",
-      "Mariana Recamonde-Mendoza"
      ],
      "bestPaper": false
     },
