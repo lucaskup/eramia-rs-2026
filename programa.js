@@ -5,7 +5,7 @@ window.PROGRAMA = {
   "venue": "Prédio 2",
   "subtitle": "Escola Regional de Aprendizado de Máquina e Inteligência Artificial do Rio Grande do Sul"
  },
- "generatedAt": "2026-10-29",
+ "generatedAt": "2026-11-05",
  "days": [
   {
    "iso": "2026-11-09",
@@ -584,13 +584,13 @@ window.PROGRAMA = {
     },
     {
      "order": 6,
-     "id": 35775,
-     "track": "Pós-Graduação",
-     "title": "Segmentação automatizada de coração e artéria aórtica em tomografias de tórax",
+     "id": 35100,
+     "track": "Graduação",
+     "title": "Um Modelo Híbrido Interpretável Baseado em Aprendizagem Profunda e Lógica Fuzzy para Classificar Lesões de Pele",
      "authors": [
-      "Felipe Muller dos Santos",
-      "Thatiane Alves",
-      "Viviane Rodrigues Botelho"
+      "Matheus Buttow",
+      "Andrew Flores Brongar",
+      "Helida Santos"
      ],
      "bestPaper": false
     },
@@ -641,13 +641,13 @@ window.PROGRAMA = {
     },
     {
      "order": 2,
-     "id": 35100,
-     "track": "Graduação",
-     "title": "Um Modelo Híbrido Interpretável Baseado em Aprendizagem Profunda e Lógica Fuzzy para Classificar Lesões de Pele",
+     "id": 35775,
+     "track": "Pós-Graduação",
+     "title": "Segmentação automatizada de coração e artéria aórtica em tomografias de tórax",
      "authors": [
-      "Matheus Buttow",
-      "Andrew Flores Brongar",
-      "Helida Santos"
+      "Felipe Muller dos Santos",
+      "Thatiane Alves",
+      "Viviane Rodrigues Botelho"
      ],
      "bestPaper": false
     },
