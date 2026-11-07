@@ -58,6 +58,27 @@ ROOMS = {
 ROOM_POSTER = "hall"
 ROOMS_ORAL = {1: "teatro", 5: "teatro", 8: "teatro", 2: "s507", 4: "s507", 7: "s507", 3: "s508", 6: "s508", 9: "s508"}
 
+# Chair de cada sessão técnica, por número da sessão.
+# Se a planilha tiver uma coluna "Chair", ela tem precedência.
+CHAIRS_ORAL = {
+    1: "Luiz José Schirmer",
+    2: "Gabriel Ramos",
+    3: "Luciano Costa Blomberg",
+    4: "Rafaela Rech",
+    5: "Paulo Ferreira",
+    6: "Samuel Ambrust",
+    7: "Márcia Pasin",
+    8: "Karina Machado",
+    9: "Marcelo Thielo",
+}
+
+# Banca das sessões de best papers, por número da sessão.
+# Se a planilha tiver uma coluna "Banca" (nomes separados por vírgula ou ponto e vírgula), ela tem precedência.
+COMMITTEES_ORAL = {
+    1: ["Lucas Alegre", "Viviane Botelho", "Sandro Fiorini"],
+    2: ["Karina Machado", "Joaquim Assunção"],  # terceiro membro (Solange Rezende) aguardando confirmação
+}
+
 LOWER_PARTICLES = {"de", "da", "do", "das", "dos", "e", "di", "del", "van", "von"}
 
 
@@ -113,9 +134,29 @@ def room_for(name, kind, from_sheet=""):
         return {"key": slug(from_sheet), "label": from_sheet, "full": from_sheet}
     if kind == "poster":
         return ROOMS[ROOM_POSTER]
-    m = re.search(r"(\d+)\s*$", name)
-    key = ROOMS_ORAL.get(int(m.group(1))) if m else None
+    key = ROOMS_ORAL.get(session_number(name))
     return ROOMS[key] if key else None
+
+
+def session_number(name):
+    m = re.search(r"(\d+)\s*$", name)
+    return int(m.group(1)) if m else None
+
+
+def chair_for(name, kind, from_sheet=""):
+    if from_sheet:
+        return from_sheet
+    if kind != "oral":
+        return ""
+    return CHAIRS_ORAL.get(session_number(name), "")
+
+
+def committee_for(name, kind, from_sheet=""):
+    if from_sheet:
+        return [clean_text(n) for n in re.split(r"[;,]", from_sheet) if clean_text(n)]
+    if kind != "oral":
+        return []
+    return list(COMMITTEES_ORAL.get(session_number(name), []))
 
 
 def read_sheet(ws, kind):
@@ -145,6 +186,8 @@ def read_sheet(ws, kind):
                 "time": clean_text(row[col["Horário"]]).replace("-", "–"),
                 "theme": clean_text(row[col["Tema"]]) if "Tema" in col else "",
                 "room": room_for(name, kind, clean_text(row[col["Local"]]) if "Local" in col else ""),
+                "chair": chair_for(name, kind, clean_text(row[col["Chair"]]) if "Chair" in col else ""),
+                "committee": committee_for(name, kind, clean_text(row[col["Banca"]]) if "Banca" in col else ""),
                 "papers": [],
             }
         title = clean_text(row[col["Título"]])

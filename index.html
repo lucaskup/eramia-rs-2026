@@ -178,6 +178,8 @@
   .sh .name { font-weight: 700; font-size: 1.02rem; }
   .sh .theme { color: var(--text); margin-top: 2px; }
   .sh .meta { color: var(--muted); font-size: .85rem; margin-top: 4px; display: flex; gap: 10px; flex-wrap: wrap; }
+  .sh .people { color: var(--muted); font-size: .85rem; margin-top: 4px; display: flex; gap: 4px 14px; flex-wrap: wrap; }
+  .sh .people b { color: var(--text); font-weight: 600; }
   .room { display: inline-block; font-size: .74rem; font-weight: 600; padding: 2px 8px; border-radius: 999px; border: 1px solid transparent; }
   .room.teatro { background: var(--teatro-bg); color: var(--teatro); }
   .room.s507 { background: var(--s507-bg); color: var(--s507); }
@@ -521,6 +523,10 @@
           </div>
         </div>
       </li>`).join('');
+    const peopleParts = [];
+    if (s.chair) peopleParts.push(`<span><b>Chair:</b> ${esc(s.chair)}</span>`);
+    if (s.committee && s.committee.length) peopleParts.push(`<span><b>Banca:</b> ${s.committee.map(esc).join(', ')}</span>`);
+    const people = peopleParts.length ? `<div class="people">${peopleParts.join('')}</div>` : '';
     return `
       <details class="session" open id="${esc(s.id)}">
         <summary>
@@ -528,6 +534,7 @@
           <div class="sh">
             <div class="name">${esc(s.name)}</div>
             ${s.theme ? `<div class="theme">${esc(s.theme)}</div>` : ''}
+            ${people}
             <div class="meta"><span class="kind${s.kind === 'poster' ? ' poster' : ''}" title="${s.kind === 'oral' ? 'Trabalhos apresentados oralmente' : 'Trabalhos apresentados em pôster'}">${kindLbl}</span><span>${esc(s.time)}</span>${s.room ? `<span class="room ${roomClass(s.room.key)}" title="${esc(s.room.full)}">${esc(s.room.label)}</span>` : ''}<span>${count}</span></div>
           </div>
         </summary>

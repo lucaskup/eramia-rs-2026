@@ -5,7 +5,7 @@ window.PROGRAMA = {
   "venue": "Prédio 2",
   "subtitle": "Escola Regional de Aprendizado de Máquina e Inteligência Artificial do Rio Grande do Sul"
  },
- "generatedAt": "2026-11-05",
+ "generatedAt": "2026-11-06",
  "days": [
   {
    "iso": "2026-11-09",
@@ -44,6 +44,12 @@ window.PROGRAMA = {
     "label": "Teatro Moacyr Scliar",
     "full": "Teatro Moacyr Scliar, 4º andar, Prédio 2"
    },
+   "chair": "Luiz José Schirmer",
+   "committee": [
+    "Lucas Alegre",
+    "Viviane Botelho",
+    "Sandro Fiorini"
+   ],
    "papers": [
     {
      "order": 1,
@@ -134,6 +140,11 @@ window.PROGRAMA = {
     "label": "Sala 507",
     "full": "Sala 507, Prédio 2"
    },
+   "chair": "Gabriel Ramos",
+   "committee": [
+    "Karina Machado",
+    "Joaquim Assunção"
+   ],
    "papers": [
     {
      "order": 1,
@@ -217,6 +228,8 @@ window.PROGRAMA = {
     "label": "Sala 508",
     "full": "Sala 508, Prédio 2"
    },
+   "chair": "Luciano Costa Blomberg",
+   "committee": [],
    "papers": [
     {
      "order": 1,
@@ -301,6 +314,8 @@ window.PROGRAMA = {
     "label": "Sala 507",
     "full": "Sala 507, Prédio 2"
    },
+   "chair": "Rafaela Rech",
+   "committee": [],
    "papers": [
     {
      "order": 1,
@@ -414,6 +429,8 @@ window.PROGRAMA = {
     "label": "Teatro Moacyr Scliar",
     "full": "Teatro Moacyr Scliar, 4º andar, Prédio 2"
    },
+   "chair": "Paulo Ferreira",
+   "committee": [],
    "papers": [
     {
      "order": 1,
@@ -523,6 +540,8 @@ window.PROGRAMA = {
     "label": "Sala 508",
     "full": "Sala 508, Prédio 2"
    },
+   "chair": "Samuel Ambrust",
+   "committee": [],
    "papers": [
     {
      "order": 1,
@@ -626,6 +645,8 @@ window.PROGRAMA = {
     "label": "Sala 507",
     "full": "Sala 507, Prédio 2"
    },
+   "chair": "Márcia Pasin",
+   "committee": [],
    "papers": [
     {
      "order": 1,
@@ -696,6 +717,8 @@ window.PROGRAMA = {
     "label": "Teatro Moacyr Scliar",
     "full": "Teatro Moacyr Scliar, 4º andar, Prédio 2"
    },
+   "chair": "Karina Machado",
+   "committee": [],
    "papers": [
     {
      "order": 1,
@@ -769,6 +792,8 @@ window.PROGRAMA = {
     "label": "Sala 508",
     "full": "Sala 508, Prédio 2"
    },
+   "chair": "Marcelo Thielo",
+   "committee": [],
    "papers": [
     {
      "order": 1,
@@ -839,6 +864,8 @@ window.PROGRAMA = {
     "label": "Hall 3º andar",
     "full": "Hall do 3º andar, Prédio 2"
    },
+   "chair": "",
+   "committee": [],
    "papers": [
     {
      "order": 1,
@@ -1088,6 +1115,8 @@ window.PROGRAMA = {
     "label": "Hall 3º andar",
     "full": "Hall do 3º andar, Prédio 2"
    },
+   "chair": "",
+   "committee": [],
    "papers": [
     {
      "order": 1,
@@ -1352,6 +1381,8 @@ window.PROGRAMA = {
     "label": "Hall 3º andar",
     "full": "Hall do 3º andar, Prédio 2"
    },
+   "chair": "",
+   "committee": [],
    "papers": [
     {
      "order": 1,
@@ -1591,6 +1622,8 @@ window.PROGRAMA = {
     "label": "Hall 3º andar",
     "full": "Hall do 3º andar, Prédio 2"
    },
+   "chair": "",
+   "committee": [],
    "papers": [
     {
      "order": 1,
@@ -1825,6 +1858,8 @@ window.PROGRAMA = {
     "label": "Hall 3º andar",
     "full": "Hall do 3º andar, Prédio 2"
    },
+   "chair": "",
+   "committee": [],
    "papers": [
     {
      "order": 1,
@@ -2061,6 +2096,8 @@ window.PROGRAMA = {
     "label": "Hall 3º andar",
     "full": "Hall do 3º andar, Prédio 2"
    },
+   "chair": "",
+   "committee": [],
    "papers": [
     {
      "order": 1,
